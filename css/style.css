@@ -1,0 +1,44 @@
+body{
+	background: #E6E6FA;
+}
+
+/*#contenedor{
+background:#7B6010;
+position: absolute;
+top: 15%;
+left: 35%;
+width: 40%;
+height: 100%;
+padding: 10px 0px 0px 20px;
+}*/
+#codigo, #nombre, #nota{
+    width: 200px;
+    height: 25px;
+    
+    
+}
+
+
+#mipromedio, #notamayor, #notamenor, #registrarestudiantes {
+    background: #9DAA1D;
+    padding: 15px  20px 5px 50px;
+    width: 200px;
+    border-radius: 10px;
+	
+}
+#ingresonuevosestudiante{
+color:blue;
+        
+}
+/*#cabecera{
+background: #95a5a6;
+padding: 20px 10px 10px 10px;
+position: absolute;
+top: 8%;
+left: 35%;
+width: 30%;
+height: 8%;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+text-align: center;
+}*/
