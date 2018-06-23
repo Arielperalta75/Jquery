@@ -1,5 +1,5 @@
 
- 	function editarEstudiante(codigo) {
+function editarEstudiante(codigo) {
   var estudiante;
   for (var i = 0; i < localStorage.length; i++) {
     var clave = localStorage.key(i);
@@ -19,17 +19,17 @@ function listarEstudiantes() {
 
   tabla += '<table border="1">';
   tabla += '<tr>';
-  tabla += '<th>Codigo</th>';
-  tabla += '<th>Nombre</th>';
-  tabla += '<th>Nota</th>';
-  tabla += '<th>Editar</th>';
-  tabla += '<th>Eliminar</th>';
+  tabla += '<th>CODIGO</th>';
+  tabla += '<th>NOMBRE</th>';
+  tabla += '<th>NOTA</th>';
+  tabla += '<th>EDITAR</th>';
+  tabla += '<th>ELIMINAR</th>';
   tabla += '</tr>';
 
   for (var i = 0; i < localStorage.length; i++) {
     var clave = localStorage.key(i);
     var estudiante = $.parseJSON(localStorage.getItem(clave));
- 
+
     tabla += '<tr>';
     tabla += '<td>' + estudiante.codigo + '</td>';
     tabla += '<td>' + estudiante.nombre + '</td>';
@@ -40,7 +40,6 @@ function listarEstudiantes() {
   }
   tabla += '</table>';
   $(parrafo1).html(tabla);
-  
 }
 
 function eliminarEstudiante(codigo) {
@@ -58,7 +57,7 @@ $(document).ready(function() {
 
   $("#codigo").val(contador);
 
-  $("#registrarestudiantes").click(function() {
+  $("#registrarestudiante").click(function() {
     var codigo = $("#codigo").val();
     var nombre = $("#nombre").val();
     var nota = $("#nota").val();
@@ -73,13 +72,13 @@ $(document).ready(function() {
     contador = localStorage.length + 1;
 
     listarEstudiantes();
-   restablecer();
+    restablecer();
 
   });
 
- /* $("#boton2").click(function() {
-    restablecer(9);
-  });*/
+  //$("#boton2").click(function() {
+  //  restablecer(9);
+//  });
 
   function restablecer() {
     $("#codigo").val(contador);
@@ -89,7 +88,7 @@ $(document).ready(function() {
 
   listarEstudiantes();
   $("#codigo").val();
-  
+
 });
 
 $("#mipromedio").click(function() {
@@ -106,27 +105,22 @@ $("#mipromedio").click(function() {
       alert("La nota promedio es: " + promedio);
 
     });
-
-
-//$("#ingresonuevosestudiantes").validate();
-
- 	$("#notamenor").click(function(){
+     $("#notamenor").click(function(){
  		if(localStorage.length===0){
  		return false;	
  	}else{	
  		var Nmin = 100;	 
  		for (var i=0; i<localStorage.length; i++){	
- 			var clave=localStorage.key(i);	 
- 			var registro=$.parseJSON(localStorage.getItem(clave));	
+ 			      var clave=localStorage.key(i);	
+            var registro=$.parseJSON(localStorage.getItem(clave));
  			if (Nmin>registro.nota){	
  				Nmin = parseInt(registro.nota);	
  			}	 			
  		}	 		
- 		alert("La nota minima es: " + Nmin);
+ 		alert("La nota menor es: " + Nmin);
  	}	 	
 	});	
-            	
- 	$("#notamayor").click(function(){
+  $("#notamayor").click(function(){
  			 				
  		if(localStorage.length===0){
  			return false;
@@ -140,5 +134,5 @@ $("#mipromedio").click(function() {
  				}	 				
  			}	 			
  			alert("La nota mayor es: "+ Nmax);
-        }
- 	});     
+      }
+      });

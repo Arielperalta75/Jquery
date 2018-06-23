@@ -19,11 +19,12 @@ padding: 10px 0px 0px 20px;
 }
 
 
-#mipromedio, #notamayor, #notamenor, #registrarestudiantes {
+#mipromedio, #notamayor, #notamenor, #registrarestudiante {
     background: #9DAA1D;
     padding: 15px  20px 5px 50px;
     width: 200px;
     border-radius: 10px;
+   text-align:inherit;
 	
 }
 #ingresonuevosestudiante{
