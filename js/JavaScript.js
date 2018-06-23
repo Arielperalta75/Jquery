@@ -107,56 +107,43 @@ $("#mipromedio").click(function() {
 
     });
 
-$("#notamayor").click(function() {
-     var notamayor = "";
-        key, data, estudiante;
-      for (var i = 0; i < localStorage.length; i++) {
-        key = localStorage.key(i); // Clave donde esta guardada la info del Est.
-        data = localStorage.getItem(key); // Info del Est. en formato JSON
-        estudiante = JSON.parse(data); // Objecto estudiante
-        notamayor += parseInt(estudiante.nota >=10); // Nota en formato entero
-      }
 
-      alert("La nota mayor es: " + notamayor);
+//$("#ingresonuevosestudiantes").validate();
 
-     });
-
-$("#ingresonuevosestudiantes").validate();
-/*$("#notamenor").click(function() {
-     var notamenor = "";
-        key, data, estudiante;
-      for (var i = 0; i < localStorage.length; i++) {
-        key = localStorage.key(i); // Clave donde esta guardada la info del Est.
-        data = localStorage.getItem(key); // Info del Est. en formato JSON
-        estudiante = JSON.parse(data); // Objecto estudiante
-        acumulador += parseInt(estudiante.nota, 10); // Nota en formato entero
-      }
-      var promedio = acumulador / localStorage.length;
-
-      alert("La nota promedio es: " + promedio);
-
-     });*/
-//Método que halla el número mayor
-	/*function NotaMayor(){
-           var Nota = 0;
-           var i;
-            for (i = 0; i < jsonObject.alumnos.length; i++) {
-                if (jsonObject.alumnos[i].nota >= Nota) {
-                     Nota = jsonObject.alumnos[i].nota;
-					
-                }	
-            }
-		alert("La nota Mayor es: "+ Nota);
- }
-		    		
-//Método que halla la nota menor
-	function NotaMenor(){
-	    var menor = 10;
-		var i;
-          for (i = 0; i < jsonObject.alumnos.length; i++) {
-             if (jsonObject.alumnos[i].nota <= menor) {
-                     menor = jsonObject.alumnos[i].nota;
-		     }
+	//Esta función calcula la nota mas baja de los alumnos
+ 	$("#notamenor").click(function(){
+ 		if(localStorage.length===0){
+ 		return false;	
+ 	}else{	
+ 		var Nmin = 100;	 
+ 		for (var i=0; i<localStorage.length; i++){	
+ 			var key=localStorage.key(i);	
+            var data=localStorage.getItem(key);
+ 			var registro=$.parseJSON(localStorage.getItem(clave));	
+ 			if (Nmin>registro.nota){	
+ 				Nmin = parseInt(registro.nota);	
+ 			}	 			
+ 		}	 		
+ 		alert("La nota minima es: " + Nmin);
+ 	}	 	
+	});	
+            
+       //Esta funcion calcula las notas más alta de los alumnos	 	
+ 	$("#notamayor").click(function(){
+ 			 		
+ 		//Validar para que cuando se haga click al boton no de ningun tipo de resultado	 		
+ 		if(localStorage.length===0){
+ 			return false;
+ 		}else{
+ 			//Correr LocalStorage para que de resultado de nota mas alta	 			
+ 			var Nmax = 0;
+ 			for (var i=0;i<localStorage.length; i++){
+ 				var clave=localStorage.key(i);
+ 				var registro=$.parseJSON(localStorage.getItem(clave));					 						
+ 				if (Nmax<registro.nota){
+ 					Nmax = parseInt(registro.nota);																		
+ 				}	 				
+ 			}	 			
+ 			alert("La nota mayor es: "+ Nmax);
         }
-		alert("La nota Menor es: "+ menor);		
-}*/
+ 	});     
