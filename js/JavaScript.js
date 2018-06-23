@@ -110,15 +110,13 @@ $("#mipromedio").click(function() {
 
 //$("#ingresonuevosestudiantes").validate();
 
-	//Esta función calcula la nota mas baja de los alumnos
  	$("#notamenor").click(function(){
  		if(localStorage.length===0){
  		return false;	
  	}else{	
  		var Nmin = 100;	 
  		for (var i=0; i<localStorage.length; i++){	
- 			var key=localStorage.key(i);	
-            var data=localStorage.getItem(key);
+ 			var clave=localStorage.key(i);	 
  			var registro=$.parseJSON(localStorage.getItem(clave));	
  			if (Nmin>registro.nota){	
  				Nmin = parseInt(registro.nota);	
@@ -127,15 +125,12 @@ $("#mipromedio").click(function() {
  		alert("La nota minima es: " + Nmin);
  	}	 	
 	});	
-            
-       //Esta funcion calcula las notas más alta de los alumnos	 	
+            	
  	$("#notamayor").click(function(){
- 			 		
- 		//Validar para que cuando se haga click al boton no de ningun tipo de resultado	 		
+ 			 				
  		if(localStorage.length===0){
  			return false;
- 		}else{
- 			//Correr LocalStorage para que de resultado de nota mas alta	 			
+ 		}else{	 			
  			var Nmax = 0;
  			for (var i=0;i<localStorage.length; i++){
  				var clave=localStorage.key(i);
