@@ -21,16 +21,32 @@ padding: 10px 0px 0px 20px;
 
 #mipromedio, #notamayor, #notamenor, #registrarestudiante {
     background: #9DAA1D;
-    padding: 15px  20px 5px 50px;
     width: 200px;
+    height: 40px;
     border-radius: 10px;
-   text-align:inherit;
+    text-align: center;
 	
 }
 #ingresonuevosestudiante{
 color:blue;
         
 }
+tabla, #editar{
+    background:#1595CB;
+    height: 40px;
+    width: 100px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+tabla, #eliminar{
+    background:#DC2C2F;
+    height: 40px;
+    width: 100px;
+    border-radius: 8px;
+    text-align: center;
+}
+
 /*#cabecera{
 background: #95a5a6;
 padding: 20px 10px 10px 10px;
